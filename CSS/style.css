@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+  --white: #ffffff;
+  --veryLightGrayishBlue: #f6f6fe;
+  --lightGrayishBlue: #b3b5c6;
+  --grayishBlue: #6d708d;
+  --darkGrayishBlue: #494c5f;
+  --blue: #696fdd;
+
+  --gradient: linear-gradient(135deg, #a3a8f0, #696fdd);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--veryLightGrayishBlue);
+  background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+  min-height: 100vh;
+  display: grid;
+  gap: 3rem;
+}
+main {
+  display: grid;
+  gap: 2rem;
+  padding-inline: 1rem;
+}
+/* HEADER */
+header {
+  margin-top: 2rem;
+  display: grid;
+  place-items: center;
+}
+h1 {
+  color: var(--darkGrayishBlue);
+  font-size: 2rem;
+  align-self: end;
+}
+.toggle-field {
+  align-self: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+}
+.toggle-field p {
+  color: var(--lightGrayishBlue);
+}
+
+/*  BTN - TOGGLE */
+.toggle {
+  outline: transparent;
+  border: transparent;
+  border-radius: 2rem;
+  background: var(--gradient);
+  padding-right: 1.5rem;
+  padding-block: 0.25rem;
+  transition: padding-inline 250ms ease-in-out;
+}
+.toggle.active {
+  cursor: pointer;
+  padding-inline: 1.5rem 0;
+}
+.toggle:hover {
+  cursor: pointer;
+  filter: opacity(0.7);
+}
+
+.circle {
+  margin-inline: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  background-color: var(--white);
+}
+
+/* CARD */
+.card {
+  color: var(--grayishBlue);
+  background-color: var(--white);
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1rem;
+}
+h3 {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--darkGrayishBlue);
+  font-size: 2.5rem;
+}
+h3 > span {
+  font-size: 4rem;
+}
+.card p:first-of-type {
+  border-block: 1px solid var(--lightGrayishBlue);
+  margin-top: 0;
+}
+.card p {
+  margin-top: -2rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--lightGrayishBlue);
+}
+.btn {
+  color: var(--white);
+  background: var(--gradient);
+  outline: transparent;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.8125rem;
+}
+
+.btn:hover {
+  color: var(--blue);
+  background: var(--white);
+  border-color: var(--blue);
+  cursor: pointer;
+}
+
+/* CARD - BEST */
+.card--best {
+  color: var(--white);
+  background: var(--gradient);
+}
+.card--best p:first-of-type {
+  border-color: var(--white);
+}
+.card--best p {
+  border-color: var(--white);
+}
+
+.card--best h3 {
+  color: var(--white);
+}
+
+.btn--best {
+  color: var(--blue);
+  background: var(--white);
+  border-color: var(--white);
+}
+.btn--best:hover {
+  color: var(--white);
+  border: 1px solid var(--white);
+  background: transparent;
+}
+
+/* FOOTER */
+footer {
+  align-self: end;
+  justify-self: center;
+}
+.attribution p {
+  color: var(--darkGrayishBlue);
+  padding: 0.5rem;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+.attribution a:is(:link, :visited) {
+  color: var(--blue);
+  text-decoration: none;
+}
+.attribution a:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    justify-self: center;
+    place-items: center;
+    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    min-width: 20rem;
+  }
+  .card--best {
+    padding-block: 3.5rem;
+  }
+  .card:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
