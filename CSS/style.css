@@ -93,6 +93,7 @@ h1 {
   padding: 2rem;
   border-radius: 0.5rem;
   text-align: center;
+  filter: drop-shadow(0 0 1rem #00000015);
 }
 h2 {
   font-size: 1rem;
